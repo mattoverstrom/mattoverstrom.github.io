@@ -81,11 +81,14 @@
 		}
 
 // youtube api
-const api = 'AIzaSyC98I8iv6hoNomR4JLqTmnWq0PiWVMLnRI';
+
+
+
+const api = 'AIzaSyAxghYShlWVEjAM3dzr7xCEfKOvLOMuHcI';
 const output = document.querySelector('.output');
 const searchTerm = document.querySelector('input');
  
-searchTerm.setAttribute('value', 'Search Here through Youtube for your favorite videos');
+searchTerm.setAttribute('value', 'Search');
  
 const btnPrev = document.createElement('button');
 btnPrev.setAttribute('disabled',true);
@@ -160,4 +163,9 @@ function show(data) {
 }
 
 
+
+
+
 })(jQuery);
+
+//////end api
