@@ -84,7 +84,7 @@
 
 
 
-const api = 'AIzaSyAxghYShlWVEjAM3dzr7xCEfKOvLOMuHcI';
+// const api = 'AIzaSyAxghYShlWVEjAM3dzr7xCEfKOvLOMuHcI';
 const output = document.querySelector('.output');
 const searchTerm = document.querySelector('input');
  
