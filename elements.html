@@ -47,6 +47,232 @@
 									<h4>More about me...</h4>
 									<p>I got into programming because I had a passion and desire to learn. Everyday the world is changing and the technology around us. It is this need to learn that has fueled and continues to inspire me. It has always fascinated me that the world is code. I feel a need to provide more value and grow my skills to contribute to the community; thus growing myself both individually and spirtually. I know it may sound silly to some, yet technology is an essential component in my happiness. Having a computer in your pocket and not using it for actual valuable growth as an indivual; is a dirt road to depression. I would much rather use technology to my advantage. On a highway to happiness.
 									</p>
+
+									<!-- ///////cool draw start-->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<!-- ////online signatures -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>coolDraw</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="buttonSide col-sm-6">
+                <div>Draw in white space to the right! And click the buttons to change and draw away</div>
+                <button id="luminosity" type="button" class="btn btn-primary">Luminosity</button>
+                <button id="color" type="button" class="btn btn-primary">Color</button>
+                <button id="hue" type="button" class="btn btn-primary">Hue</button>
+                <button id="exclusion" type="button" class="btn btn-primary">Exclusion</button>
+                <button id="difference" type="button" class="btn btn-primary">Difference</button>
+                <button id="default" type="button" class="btn btn-primary">Default</button>
+                <button id="clear" type="button" class="btn btn-danger">Clear</button>
+            </div>
+            <div class="col-sm-6">
+                <canvas id="draw"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .buttonSide {
+            background-color: grey;
+        }
+
+        #draw {
+            background-color: white;
+        }
+    </style>
+
+    <script>
+
+        // selects canvas
+        const canvas = document.querySelector('#draw');
+        // sets canvas to two dimensional
+        const ctx = canvas.getContext('2d');
+        // sets canvas width and height to size of window
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // sets drawing color
+        ctx.strokeStyle = '#BADASS';
+        // sets line end to round
+        ctx.lineCap = 'round';
+        // sets line intersection to round
+        ctx.lineJoin = 'round';
+        // sets line width
+        ctx.lineWidth = '50';
+        // ctx.globalCompositeOperation = 'difference';
+
+        // sets drawing to false as default and other default starting points for drawing
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+        let hue = 0;
+        let direction = true;
+
+        // if isDrawing equals true then return console log coordinates
+        function foo(fum) {
+            if (!isDrawing)
+                return console.log(fum);
+
+            // sets color when running function
+            ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+            // begins path when running function
+            ctx.beginPath();
+            // draws line btwn old X/Y to new X/Y
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(fum.offsetX, fum.offsetY);
+            ctx.stroke();
+            [lastX, lastY] = [fum.offsetX, fum.offsetY];
+
+            // increases hue as line is drawn then when gets to last hue resets to zero
+            hue++;
+            if (hue == 360) {
+                hue = 0;
+            }
+
+            // makes it so line width grows and shrinks as user draws
+            if (ctx.lineWidth == 100 || ctx.lineWidth == 1) {
+                direction = !direction;
+            }
+            if (direction) {
+                ctx.lineWidth++;
+            } else {
+                ctx.lineWidth--;
+            }
+        }
+
+        // when mouse button is held down this fires starts drawing and resets X and Y
+        canvas.addEventListener('mousedown', (fum) => {
+            isDrawing = true;
+            [lastX, lastY] = [fum.offsetX, fum.offsetY];
+        });
+
+        // fires foo when mouse is moved within canvas box
+        canvas.addEventListener('mousemove', foo);
+        // if mouse button isn't pressed or out of canvas box it doesn't draw
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
+
+        // event listeners for buttons
+        document.getElementById("luminosity").addEventListener("click", changeLum);
+        document.getElementById("color").addEventListener("click", changeColor);
+        document.getElementById("hue").addEventListener("click", changeHue);
+        document.getElementById("exclusion").addEventListener("click", changeExclusion);
+        document.getElementById("difference").addEventListener("click", changeDifference);
+        document.getElementById("default").addEventListener("click", changeDefault);
+        document.getElementById("clear").addEventListener("click", clear);
+
+        function changeLum() {
+            ctx.globalCompositeOperation = 'luminosity';
+            // ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
+
+        function changeColor() {
+            ctx.globalCompositeOperation = 'color';
+            // ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
+
+        function changeHue() {
+            ctx.globalCompositeOperation = 'hue';
+            // ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
+
+        function changeExclusion() {
+            ctx.globalCompositeOperation = 'exclusion';
+            // ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
+
+        function changeDifference() {
+            ctx.globalCompositeOperation = 'difference';
+            // ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
+
+        function changeDefault() {
+            ctx.globalCompositeOperation = 'source-over';
+            // ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
+
+        function clear() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
+
+        // Set up touch events for mobile, etc
+        canvas.addEventListener("touchstart", function (fum) {
+            mousePos = getTouchPos(canvas, fum);
+            var touch = fum.touches[0];
+            var mouseEvent = new MouseEvent("mousedown", {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
+        canvas.addEventListener("touchend", function (fum) {
+            var mouseEvent = new MouseEvent("mouseup", {});
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
+        canvas.addEventListener("touchmove", function (fum) {
+            var touch = fum.touches[0];
+            var mouseEvent = new MouseEvent("mousemove", {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            canvas.dispatchEvent(mouseEvent);
+        }, false);
+
+        // Get the position of a touch relative to the canvas
+        function getTouchPos(canvasDom, touchEvent) {
+            var rect = canvasDom.getBoundingClientRect();
+            return {
+                x: touchEvent.touches[0].clientX - rect.left,
+                y: touchEvent.touches[0].clientY - rect.top
+            };
+        }
+
+        // Prevent scrolling when touching the canvas (not working)
+        // document.body.addEventListener("touchstart", function (fum) {
+        //     if (fum.target === canvas) {
+        //         fum.preventDefault();
+        //     }
+        // }, false);
+        // document.body.addEventListener("touchend", function (fum) {
+        //     if (fum.target === canvas) {
+        //         fum.preventDefault();
+        //     }
+        // }, false);
+        // document.body.addEventListener("touchmove", function (fum) {
+        //     if (fum.target === canvas) {
+        //         fum.preventDefault();
+        //     }
+        // }, false);
+
+        canvas.ontouchstart = function (fum) {
+            if (fum.touches) fum = fum.touches[0];
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+<!-- ///////end cool draw  -->
 									<b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
 									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
 									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
