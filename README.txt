@@ -13,5 +13,5 @@ I am looking for my first job as a web developer as I am currently 35% through m
 I love web development and will share my resources with the world. 
 
 
-//
+//add python/django login testing 5/26/2020
 	
