@@ -14,4 +14,26 @@ I love web development and will share my resources with the world.
 
 
 //add python/django login testing 5/26/2020
+	////
+
+
+
+letter of appreciation///
+____________________________________________________________________________________________________________
 	
+	Matthew,
+For a guy who did not think he could do this, you had a great 5 Star Performance.
+Dr. Faulkner
+
+
+
+____________________________________________________________________________________________________________
+
+>> Hello Matthew,
+>> 
+>> I have just gone online to check all my students online participation in their course shells and current grades.  Your participation and current grade are exceptional and I just wanted to take this opportunity to recognize the effort you are making. 
+>>
+>> Many times when someone is doing what they are suppose to be doing they may think their efforts are not being noticed or appreciated.  I want to let you know I am aware of the exceptional effort you have been making and want to recognize and thank you for it.
+>>
+>> Prof. Giomi
+>>
