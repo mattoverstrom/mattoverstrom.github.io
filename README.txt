@@ -42,5 +42,4 @@ ________________________________________________________________________________
 ____________________________________________________________________________________________________________
 A little about me:
 									Extraordinary leader and team member with the ability to connect with people from all walks of life. Passionate about usability & mobile friendly, with a love for learning and a need for providing exceptional value. 
-
 									//download python extensions----transfer word count through git--opensuse****/////
