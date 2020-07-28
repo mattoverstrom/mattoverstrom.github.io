@@ -83,7 +83,7 @@
 // youtube api
 //make fetch request 
 
-const api = 'AIzaSyAxghYShlWVEjAM3dzr7xCEfKOvLOMuHcI';
+const api = 'Apikeyhere';
 const output = document.querySelector('.output');
 const searchTerm = document.querySelector('input');
  
