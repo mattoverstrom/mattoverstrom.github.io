@@ -5,7 +5,7 @@
 */
 
 ///dotenv 
-require('dotenv').config()
+
 
 (function($) {
 
@@ -90,7 +90,7 @@ require('dotenv').config()
 
 ////.env
 
-
+require('dotenv').config()
 
 const api = process.env.API_KEY;
 const output = document.querySelector('.output');
