@@ -4,6 +4,9 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+///dotenv 
+require('dotenv').config()
+
 (function($) {
 
 	var	$window = $(window),
@@ -80,17 +83,16 @@
 
 		}
 
-		///dotenv 
-		require('dotenv').config()
+		
 
 // youtube api
 //make fetch request 
 
 ////.env
-console.log(process.env);
 
 
-const api = 'API_KEY';
+
+const api = process.env.API_KEY;
 const output = document.querySelector('.output');
 const searchTerm = document.querySelector('input');
  
