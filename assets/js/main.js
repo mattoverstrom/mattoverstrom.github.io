@@ -80,10 +80,17 @@
 
 		}
 
+		///dotenv 
+		require('dotenv').config()
+
 // youtube api
 //make fetch request 
 
-const api = 'Apikeyhere';
+////.env
+console.log(process.env);
+
+
+const api = 'API_KEY';
 const output = document.querySelector('.output');
 const searchTerm = document.querySelector('input');
  
