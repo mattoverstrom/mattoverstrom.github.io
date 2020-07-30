@@ -95,7 +95,7 @@
 // const api = process.env.API_KEY;
 
 
-const api = 'AIzaSyC98I8iv6hoNomR4JLqTmnWq0PiWVMLnRI';
+const api = 'AIzaSyCdJ9wNLJhTCD4_JwF-uxvDA6r-38aqBSI';
 const output = document.querySelector('.output');
 const searchTerm = document.querySelector('input');
  
