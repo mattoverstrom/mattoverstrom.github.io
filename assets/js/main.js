@@ -88,12 +88,12 @@
 // youtube api
 //make fetch request 
 
-var mykey = config.MY_KEY;
+var mykey = config.mykey;
 var secretkey = config.SECRET_KEY;
 
 
 
-const api = 'MY_KEY';
+const api = 'API_KEY';
 const output = document.querySelector('.output');
 const searchTerm = document.querySelector('input');
  
