@@ -93,7 +93,7 @@ var secretkey = config.SECRET_KEY;
 
 
 
-const api = 'MY_KEY';
+const api = 'AIzaSyAxghYShlWVEjAM3dzr7xCEfKOvLOMuHcI';
 const output = document.querySelector('.output');
 const searchTerm = document.querySelector('input');
  
