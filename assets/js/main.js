@@ -88,8 +88,8 @@
 // youtube api
 //make fetch request 
 
-var mykey = config.MY_KEY;
-var secretkey = config.SECRET_KEY;
+// var mykey = config.MY_KEY;
+// var secretkey = config.SECRET_KEY;
 
 
 
