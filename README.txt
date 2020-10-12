@@ -3,6 +3,8 @@
 youtube api, python- aws, drawing app, about me
 
 
+//Those with vision and drive, will thrive. 
+
 I made this portfolio to both show my work, as well as create a workspace to add my projects too. 
 The login originally was going to be made in Angular, however I chose to make it with Python & Django instead. 
 
