@@ -97,7 +97,12 @@ const api = 'AIzaSyAxghYShlWVEjAM3dzr7xCEfKOvLOMuHcI';
 const output = document.querySelector('.output');
 const searchTerm = document.querySelector('input');
  
-searchTerm.setAttribute('value', 'Search');
+// searchTerm.setAttribute('value', 'Search');
+//get rid of the search in the search bar
+$('input[type="text"]').each(function() { 
+	var $this = $(this); 
+	$this.attr("placeholder", $this.attr("value")).removeAttr("value"); 
+});
  
 const btnPrev = document.createElement('button');
 btnPrev.setAttribute('disabled',true);
