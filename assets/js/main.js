@@ -85,7 +85,7 @@
 
 		
 
-// youtube api -- s
+// youtube api -- 
 //make fetch request 
 
 // var mykey = config.MY_KEY;
